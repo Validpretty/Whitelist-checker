@@ -33,4 +33,11 @@ const whitelist = [
   "0x298378cec837ED7cfE489d40ACc4651FdE1e465f"
 ];
 
+// Function to check if an address is whitelisted (case insensitive)
+export function isWhitelisted(address) {
+  if (!address) return false;
+  const lowerAddress = address.toLowerCase();
+  return whitelist.some(addr => addr.toLowerCase() === lowerAddress);
+}
+
 export default whitelist;
